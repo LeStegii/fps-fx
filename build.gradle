@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+}
+
+group 'net.kettlemc'
+version '1.0.0'
+
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.9.2'
+    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.9.2'
+}
+
+javafx {
+    version = '20'
+    modules = ['javafx.graphics']
+}
+
+test {
+    useJUnitPlatform()
+
+    testLogging {
+        exceptionFormat = 'full'
+        showStackTraces = true
+    }
+}
+
+jar {
+    manifest {
+        attributes(
+                'Manifest-Version': version,
+                'Class-Path': '.',
+        )
+    }
+
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
