@@ -30,4 +30,16 @@ public class FpsFxTest {
         assertEquals(3, FpsFx.average(array));
     }
 
+    @Test
+    public void averageWithInvalids() {
+        double[] array = {1, 3, 5, -1};
+        assertEquals(3, FpsFx.average(array));
+    }
+
+    @Test
+    public void averageOnlyInvalids() {
+        double[] array = {-1, -1};
+        assertEquals(0, FpsFx.average(array));
+    }
+
 }

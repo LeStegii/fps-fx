@@ -44,7 +44,7 @@ public class FpsFx {
             }
             sum += fps;
         }
-        return sum / length;
+        return length == 0 ? 0 : sum / length;
     }
 
     /**
