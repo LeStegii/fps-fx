@@ -1,5 +1,5 @@
-# ⏰ fx-fps
-A simple api for messuring javafx fps.
+# ⏰ fps-fx
+A simple api for measuring javafx fps.
 
 The idea behind this project is heavily inspired by this [Stackoverflow answer](https://stackoverflow.com/a/28287949). Whilst not the most accurate way of measuring fps, it is a simple way of getting a rough estimate of the fps. It has been used in a similar way in [ReactFx](https://github.com/TomasMikula/ReactFX/blob/master/reactfx/src/main/java/org/reactfx/EventStreams.java#L416).
 
