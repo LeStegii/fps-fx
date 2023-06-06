@@ -1,11 +1,13 @@
 plugins {
     id 'java'
     id 'org.openjfx.javafxplugin' version '0.0.13'
+    id 'maven-publish'
 }
 
 group 'net.kettlemc'
 version '1.0.0'
 
+sourceCompatibility = targetCompatibility = JavaVersion.VERSION_17
 
 repositories {
     mavenCentral()
