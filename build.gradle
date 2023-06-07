@@ -4,7 +4,7 @@ plugins {
     id 'maven-publish'
 }
 
-group 'net.kettlemc'
+group 'net.kettlemc.fpsfx'
 version '1.0.1'
 
 sourceCompatibility = targetCompatibility = JavaVersion.VERSION_17
@@ -42,4 +42,29 @@ jar {
     }
 
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from(components["java"])
+            pom {
+                name.set("fps-fx")
+                description.set("A simple library for meassuring the FPS of JavaFX applications")
+                url.set("https://github.com/UeberallGebannt/fps-fx")
+            }
+            artifactId = "fps-fx"
+        }
+    }
+
+    repositories {
+        maven {
+            setUrl("https://repo.kettlemc.net/repository/maven-releases/")
+            credentials {
+                username = project.findProperty("repouser")
+                password = project.findProperty("repopassword")
+            }
+        }
+    }
 }
